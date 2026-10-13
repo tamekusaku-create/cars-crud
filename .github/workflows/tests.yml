@@ -20,19 +20,19 @@ jobs:
           python-version: "3.12"
           
       - name: Install requirements
-        run: python -m pip install -r requirements-dev.txt
+        run: cd cars-crud && python -m pip install -r requirements-dev.txt
         
       - name: Install Chromium and its Linux dependencies
-        run: python -m playwright install --with-deps chromium
+        run: cd cars-crud && python -m playwright install --with-deps chromium
         
       - name: Run unit tests
-        run: python -m pytest tests/unit -q
+        run: cd cars-crud && python -m pytest tests/unit -q
         
       - name: Run integration tests
-        run: python -m pytest tests/integration -q
+        run: cd cars-crud && python -m pytest tests/integration -q
         
       - name: Run API tests
-        run: python -m pytest tests/api -q
+        run: cd cars-crud && python -m pytest tests/api -q
         
       - name: Run E2E tests
-        run: python -m pytest tests/e2e -q
+        run: cd cars-crud && python -m pytest tests/e2e -q
