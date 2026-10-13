@@ -59,9 +59,13 @@ jobs:
       - name: Build and push the image
         uses: docker/build-push-action@v7
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./cars-crud/cars-crud
+          file: ./cars-crud/cars-crud/Dockerfile
           push: true
           tags: yretr0/cars-crud:latest
+
+  
+
+     
 
          
